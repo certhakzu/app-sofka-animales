@@ -16,7 +16,6 @@ public class MyScanner {
         }catch (Exception exception){
             throw new MyException(exception.getMessage(), exception);
         }
-
     }
 
     public void close() {
