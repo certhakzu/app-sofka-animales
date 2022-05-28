@@ -6,8 +6,7 @@ public class MyException extends RuntimeException {
         super(message);
     }
 
-    public MyException(String message, Exception exception) {
+    public MyException(String message, Exception exception){
         super(message, exception);
     }
-
 }

@@ -3,21 +3,22 @@ package org.sofka.animales.utilities;
 import org.sofka.animales.utilities.abstracs.Animal;
 import org.sofka.animales.utilities.interfaces.Comportamiento;
 
+
 public class Dog extends Animal implements Comportamiento {
 
     public Dog() {
-    }
-
-    public Dog(String raza, String nombre){
         this.tipoAnimal = "PERRO";
-        this.raza = raza;
-        this.nombre = nombre;
-        this.action = null;
+        this.raza = "";
+        this.nombre = "";
+        this.action = "";
     }
-
 
     @Override
     public String toString() {
-        return nombre.toUpperCase() + "\n" + raza.toUpperCase() + "\n" + tipoAnimal.toUpperCase() + "\nEstá: " + action;
+        try {
+            return (nombre.toUpperCase() + "\n" + tipoAnimal + "\n" + raza.toUpperCase() + "\nEstá: " + action);
+        }catch (Exception exception){
+            throw new MyException(exception.getMessage(), exception);
+        }
     }
 }

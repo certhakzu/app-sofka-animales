@@ -6,17 +6,18 @@ import org.sofka.animales.utilities.interfaces.Comportamiento;
 public class Cat extends Animal implements Comportamiento {
 
     public Cat(){
+        this.tipoAnimal = "PERRO";
+        this.raza = "";
+        this.nombre = "";
+        this.action = "";
     }
-    public Cat(String nombre, String raza) {
-        this.tipoAnimal = "GATO";
-        this.raza = raza;
-        this.nombre = nombre;
-        this.action = null;
-    }
-
 
     @Override
     public String toString() {
-        return nombre.toUpperCase() + "\n" + raza.toUpperCase() + "\n" + tipoAnimal.toUpperCase() + "\nEstá: " + action;
+        try {
+            return (nombre.toUpperCase() + "\n" + tipoAnimal + "\n" + raza.toUpperCase() + "\nEstá: " + action);
+        }catch (Exception exception){
+            throw new MyException(exception.getMessage(), exception);
+        }
     }
 }

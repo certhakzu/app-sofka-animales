@@ -11,7 +11,11 @@ public class MyScanner {
     }
 
     public String getAsnwer(){
-        return scanner.nextLine();
+        try {
+            return scanner.nextLine();
+        }catch (Exception exception){
+            throw new MyException(exception.getMessage(), exception);
+        }
     }
 
     public void close() {
