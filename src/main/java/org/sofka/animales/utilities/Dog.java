@@ -12,12 +12,16 @@ public class Dog extends Animal implements Comportamiento {
         this.tipoAnimal = "PERRO";
         this.raza = raza;
         this.nombre = nombre;
-        this.action = null;
+        this.action = "";
     }
 
 
     @Override
     public String toString() {
-        return nombre.toUpperCase() + "\n" + raza.toUpperCase() + "\n" + tipoAnimal.toUpperCase() + "\nEstá: " + action;
+        try {
+            return "\n" + nombre.toUpperCase() + "\n" + raza.toUpperCase() + "\n" + tipoAnimal.toUpperCase() + "\nEstá: " + action.toString().toUpperCase();
+        }catch (Exception exception){
+            throw new MyException(exception.getMessage(), exception);
+        }
     }
 }

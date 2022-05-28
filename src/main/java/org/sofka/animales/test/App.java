@@ -12,11 +12,11 @@ public class App {
     static MessagesAnimal messages = MessagesAnimal.getInstance();
     static MyScanner scanner = MyScanner.getInstance();
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         init();
     }
 
-    private static void init() throws IOException {
+    private static void init(){
 
         Boolean flag;
         do {
